@@ -1,0 +1,50 @@
+/* --- Navigation Link Styling --- */
+/* This is the "compiled" version of: @apply text-cyan-500 border-cyan-500; */
+.nav-link.active {
+    color: #06b6d4;
+    border-bottom-color: #06b6d4;
+}
+
+/* --- Mobile Bottom Nav Styling --- */
+.mobile-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280; /* text-gray-500 */
+    font-size: 0.75rem; /* text-xs */
+    line-height: 1rem;
+    flex-grow: 1;
+}
+
+.mobile-nav-link.active {
+    color: #0891b2; /* text-cyan-600 */
+}
+
+/* --- Logo Styling --- */
+.logo img { 
+  height: 60px;
+  width: auto; 
+  vertical-align: middle; 
+  margin: 0;
+}
+  
+@media screen and (max-width: 768px) {
+  .logo img { 
+    height: 50px; 
+  }
+}
+
+/* --- Fix Google Map Responsiveness --- */
+/* This ensures the iframe scales properly to its parent container's width */
+.map-responsive {
+    max-width: 100%; /* Prevents the map from overflowing on mobile */
+    height: 100%; /* Inherits the height of its parent (h-64 on mobile) */
+}
+
+/* On mobile, if the height of the parent div is fixed (h-64), this ensures the map scales correctly */
+@media screen and (max-width: 768px) {
+    .map-responsive {
+        min-height: 256px; /* Matches the h-64 Tailwind class (16rem * 16px/rem = 256px) */
+    }
+}
